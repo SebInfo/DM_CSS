@@ -2,11 +2,21 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: .5rem 1rem;
+  /* je ne reviens pas sur ces 3 lignes qui ont déjà été expliquées au TP1 */
   grid-auto-flow: dense;
+  /* Cette instruction est très importante pour ne pas laisser de lignes vides
+  En effet les grid items sont placés au fur et à mesure de leur apparition 
+  Quand la fin de rangée est atteinte il passe à la ligne donc on peut avoir des trous
+  Mettez cette ligne 6 en commentaire et testez ;) */
 }
 
+/* En CSS on peut appliquer une mise en forme en fonction des attributs 
+Ici par exemple on vise la valeur de l'attribut href
+Si href contient .doc alors on applique le mise en forme
+*/
 [href$=".doc"] {
     grid-column: 1;
+    /* L'astuce est de bien placé maintenant dans la grille ce qu'on fait ici */
     background-color: orange;
 }
 
