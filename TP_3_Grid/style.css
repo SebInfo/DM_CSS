@@ -1,6 +1,12 @@
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    /* Ici le problème est qu'on ne connait pas le nombre d'élément 
+    Donc on utilise auto-fit qui permet de générer exactement le nombre 
+    de colonne égal au nombre d'élémént enfants 
+    Comme il ne peut y avoir de retour à la ligne à la limite l'élément fait 0
+    Et au max il fait 1fr pour occuper toute la ligne
+    Il faut donc indiquer un min et un max */
 }
 
 div {
