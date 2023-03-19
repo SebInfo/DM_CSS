@@ -1,0 +1,60 @@
+.container {
+    display: grid; 
+    /* cela transforme l'élément qui a la class container 
+    en grille de type Grid Layout.
+    Ici notre div 
+    Cela veut dire aussi que tous les éléments à l'intérieur
+    sont ses enfants */
+    grid-template-columns: repeat(6, 1fr);
+    /* On définit le nombre et la largeur des colonnes 
+    de la grille.
+    Ici 6 colonnes ayant une taille de 1fr
+    1fr est une fraction donc chaque colonne fera 1/6 
+    de la taille total
+    */
+    grid-template-rows: repeat(5, 150px);
+    /* On définit le nombre et la largeur des lignes 
+    de la grille.
+    Ici 5 lignes ayant une taille de 150px
+    */
+    grid-template-areas:
+      "head head head head head head"
+      "main main main aside aside nav "
+      "main main main aside aside nav "
+      "main main main aside aside nav "
+      "footer footer footer footer footer footer";
+    /* On peut avec Grid Layout définir un schéma visuel
+    du gabarit final grâce aux zones nommées
+    */
+    row-gap: 15px;
+    column-gap: 10px;
+    /* on définit la largeur des goutières */
+}
+
+/* Le reste est un jeu d'enfant
+On associe l'élement au mot clef qu'on a mis dans le gabarit
+*/
+header {
+    background-color: red;
+    grid-area: head;
+}
+
+main {
+    background-color: orange;
+    grid-area: main;
+}
+
+aside {
+    background-color: blue;
+    grid-area: aside;
+}
+
+nav {
+    background-color: green;
+    grid-area: nav;
+}
+
+footer {
+    background-color: grey;
+    grid-area: footer;
+}
